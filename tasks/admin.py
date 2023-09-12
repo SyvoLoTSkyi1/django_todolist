@@ -1,3 +1,13 @@
 from django.contrib import admin
 
-# Register your models here.
+from tasks.models import Task, Category
+
+
+@admin.register(Task)
+class TaskAdmin(admin.ModelAdmin):
+    ...
+
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    ...

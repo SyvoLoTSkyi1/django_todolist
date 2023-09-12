@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+</head>
+<body>
+<h1>Tasks</h1>
+
+{% for task in object_list %}
+    <p>
+        <span>Category: {{ task.category.title }}</span>
+        <span>Title: {{ task.title }}</span>
+        <span>Description: {{ task.description }}</span>
+    </p>
+{% endfor %}
+</body>
+</html>
