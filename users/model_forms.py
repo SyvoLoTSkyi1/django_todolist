@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 
-
+# todo remove
 class LoginModelForm(forms.ModelForm):
     username = forms.CharField(
         label='Username',

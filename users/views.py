@@ -22,7 +22,7 @@ class LoginView(TemplateView):
 
 
 class SignUpView(TemplateView):
-    template_name = 'users/signup.html'
+    template_name = 'registration/signup.html'
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
