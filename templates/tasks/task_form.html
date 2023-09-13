@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Form</title>
+</head>
+<body>
+<h1>Task Form</h1>
+
+<div>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>

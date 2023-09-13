@@ -6,11 +6,13 @@
 <body>
 <h1>Tasks</h1>
 
+<a href="{% url 'task-create' %}">Add Task</a>
 {% for task in object_list %}
     <p>
         <span>Category: {{ task.category.title }}</span>
         <span>Title: {{ task.title }}</span>
         <span>Description: {{ task.description }}</span>
+        <a href="{% url 'task-update' task.id %}">Edit</a>
     </p>
 {% endfor %}
 </body>
