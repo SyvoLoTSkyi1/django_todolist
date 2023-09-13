@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Task</title>
+</head>
+<body>
+<h1>Delete Task</h1>
+
+<div>
+    <form method="post" action="">
+        {% csrf_token %}
+        <p>Are you sure?</p>
+        <input type="submit" value="Delete">
+    </form>
+</div>
+</body>
+</html>

@@ -13,6 +13,7 @@
         <span>Title: {{ task.title }}</span>
         <span>Description: {{ task.description }}</span>
         <a href="{% url 'task-update' task.id %}">Edit</a>
+        <a href="{% url 'task-delete' task.id %}">Delete</a>
     </p>
 {% endfor %}
 </body>
