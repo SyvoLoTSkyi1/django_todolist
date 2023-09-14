@@ -4,7 +4,13 @@
     <title>Tasks</title>
 </head>
 <body>
-<h1>Tasks</h1>
+{% if request.user.is_authenticated %}
+    <p>{{ request.user }}</p>
+    <a href="{% url 'logout' %}">Logout</a>
+{% endif %}
+
+<hr>
+<h1>My To Do List</h1>
 
 <a href="{% url 'task-create' %}">Add Task</a>
 {% for task in object_list %}
