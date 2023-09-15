@@ -1,39 +1,28 @@
 from django.contrib.auth import login
-from django.views.generic import TemplateView
+from django.contrib.auth.views import LoginView
+from django.urls import reverse_lazy
+from django.views.generic import FormView
 
-from users.model_forms import LoginModelForm, SignUpModelForm
-
-
-class LoginView(TemplateView):
-    template_name = 'users/login.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context.update({'form': kwargs.get('form') or LoginModelForm})
-        return context
-
-    def post(self, request, *args, **kwargs):
-        context = self.get_context_data(**kwargs)
-        form = context['form']
-        form = form(request.POST)
-        if form.is_valid():
-            login(request, form.user)
-        return self.get(request, form=form, *args, **kwargs)
+from users.model_forms import CustomUserCreationForm
 
 
-class SignUpView(TemplateView):
+class CustomLoginView(LoginView):
+    template_name = 'registration/login.html'
+    fields = '__all__'
+    redirect_authenticated_user = True
+
+    def get_success_url(self):
+        return reverse_lazy('task_list')
+
+
+class SignUpView(FormView):
     template_name = 'registration/signup.html'
+    form_class = CustomUserCreationForm
+    redirect_authenticated_user = True
+    success_url = reverse_lazy('task_list')
 
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context.update({'form': kwargs.get('form') or SignUpModelForm})
-        return context
-
-    def post(self, request, *args, **kwargs):
-        context = self.get_context_data(**kwargs)
-        form = context['form']
-        form = form(request.POST)
-        if form.is_valid():
-            new_user = form.save()
-            login(request, new_user)
-        return self.get(request, form=form, *args, **kwargs)
+    def form_valid(self, form):
+        user = form.save()
+        if user is not None:
+            login(self.request, user)
+        return super().form_valid(form)
