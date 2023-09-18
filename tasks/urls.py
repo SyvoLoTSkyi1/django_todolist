@@ -1,5 +1,4 @@
-from django.contrib.auth import urls
-from django.urls import path, include
+from django.urls import path
 
 from tasks.views import TaskView, TaskDetailView, CreateTaskView, \
     UpdateTaskView, DeleteTaskView, CreateCategoryView, \
