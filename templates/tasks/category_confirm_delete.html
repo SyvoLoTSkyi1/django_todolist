@@ -1,9 +1,9 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Delete Category</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="javascript:history.back()">
+    <button style="margin:10px;" type="button">Back</button>
+</a>
 <h1>Delete Category</h1>
 
 <div>
@@ -13,5 +13,4 @@
         <input type="submit" value="Delete">
     </form>
 </div>
-</body>
-</html>
+{% endblock %}

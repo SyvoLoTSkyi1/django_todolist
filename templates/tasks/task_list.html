@@ -1,9 +1,6 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Tasks</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
 {% if request.user.is_authenticated %}
     <p>{{ request.user }}</p>
     <a href="{% url 'logout' %}">Logout</a>
@@ -57,33 +54,5 @@
     {% endfor %}
 
 {% endif %}
+{% endblock %}
 
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-{#<a href="{% url 'category-create' %}">Add Category</a>#}
-{#<a href="{% url 'task-create' %}">Add Task</a>#}
-{#{% for task in tasks %}#}
-{#    <p>#}
-{#        <span>Category: {{ task.category.title }}</span>#}
-{#        <span>Title: {{ task.title }}</span>#}
-{#        <span>Description: {{ task.description }}</span>#}
-{##}
-{#        <a href="{% url 'task-update' task.id %}">Edit</a>#}
-{#        <a href="{% url 'task-delete' task.id %}">Delete</a>#}
-{#    </p>#}
-{#        {% empty %}#}
-{#        <h3>No tasks yet</h3>#}
-{#{% endfor %}#}
-{#</body>#}
-{#</html>#}

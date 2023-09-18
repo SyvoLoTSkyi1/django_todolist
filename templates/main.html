@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Main</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
+
 <h1>Main</h1>
 
 <div>
@@ -29,7 +26,4 @@
 
     <p>Or if you already have an account <a href="{% url 'login' %}">Login</a><p>
 </div>
-
-
-</body>
-</html>
+{% endblock %}
