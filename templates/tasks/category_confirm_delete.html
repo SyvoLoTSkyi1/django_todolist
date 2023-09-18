@@ -1,17 +1,16 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Task Form</title>
+    <title>Delete Category</title>
 </head>
 <body>
-<h1>Task Form</h1>
+<h1>Delete Category</h1>
 
 <div>
     <form method="post" action="">
         {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Submit">
+        <p>Are you sure?</p>
+        <input type="submit" value="Delete">
     </form>
 </div>
 </body>

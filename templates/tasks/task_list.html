@@ -12,18 +12,78 @@
 <hr>
 <h1>My To Do List</h1>
 
+<a href="{% url 'category-create' %}">Add Category</a>
 <a href="{% url 'task-create' %}">Add Task</a>
-{% for task in tasks %}
-    <p>
-        <span>Category: {{ task.category.title }}</span>
+<hr>
+{% if categories %}
+    {% for task in tasks %}
+    {% if task.category == None %}
         <span>Title: {{ task.title }}</span>
         <span>Description: {{ task.description }}</span>
 
         <a href="{% url 'task-update' task.id %}">Edit</a>
         <a href="{% url 'task-delete' task.id %}">Delete</a>
-    </p>
-        {% empty %}
-        <h3>No tasks yet</h3>
+        <br>
+
+    {% endif %}
+    {% endfor %}
+{% for category in categories %}
+    <br>
+    <span>Category: {{ category.title }}</span>
+    <a href="{% url 'category-update' category.id %}">Edit</a>
+    <a href="{% url 'category-delete' category.id %}">Delete</a>
+    <br>
+     {% for task in tasks %}
+      {% if task.category == category %}
+        <span>Title: {{ task.title }}</span>
+        <span>Description: {{ task.description }}</span>
+
+        <a href="{% url 'task-update' task.id %}">Edit</a>
+        <a href="{% url 'task-delete' task.id %}">Delete</a>
+        <br>
+        {% endif %}
+    {% endfor %}
 {% endfor %}
+{% else %}
+    {% for task in tasks %}
+        <span>Title: {{ task.title }}</span>
+        <span>Description: {{ task.description }}</span>
+
+        <a href="{% url 'task-update' task.id %}">Edit</a>
+        <a href="{% url 'task-delete' task.id %}">Delete</a>
+        <br>
+        {% empty %}
+    <h3>No tasks yet</h3>
+    {% endfor %}
+
+{% endif %}
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+{#<a href="{% url 'category-create' %}">Add Category</a>#}
+{#<a href="{% url 'task-create' %}">Add Task</a>#}
+{#{% for task in tasks %}#}
+{#    <p>#}
+{#        <span>Category: {{ task.category.title }}</span>#}
+{#        <span>Title: {{ task.title }}</span>#}
+{#        <span>Description: {{ task.description }}</span>#}
+{##}
+{#        <a href="{% url 'task-update' task.id %}">Edit</a>#}
+{#        <a href="{% url 'task-delete' task.id %}">Delete</a>#}
+{#    </p>#}
+{#        {% empty %}#}
+{#        <h3>No tasks yet</h3>#}
+{#{% endfor %}#}
+{#</body>#}
+{#</html>#}
