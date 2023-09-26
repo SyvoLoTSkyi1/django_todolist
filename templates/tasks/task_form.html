@@ -1,16 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<a href="javascript:history.back()">
-    <button style="margin:10px;" type="button">Back</button>
-</a>
-<h1>Task Form</h1>
 
-<div>
+<div class="header-bar">
+    <a href="javascript:history.back()">&#8592; Back</a>
+</div>
+
+
+
+
+<div class="card-body">
+    <h1>Task</h1>
     <form method="post" action="">
         {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Submit">
+        {{ form.as_p }}
+        <input id="add-button" type="submit" value="Submit">
     </form>
 </div>
 {% endblock %}

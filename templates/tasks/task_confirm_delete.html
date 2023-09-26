@@ -1,16 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<a href="javascript:history.back()">
-    <button style="margin:10px;" type="button">Back</button>
-</a>
-<h1>Delete Task</h1>
+<div class="header-bar">
 
-<div>
-    <form method="post" action="">
-        {% csrf_token %}
-        <p>Are you sure?</p>
-        <input type="submit" value="Delete">
-    </form>
+    <a href="javascript:history.back()">&#8592; Back</a>
+</div>
+
+<div class="card-body">
+
+    <h1>Delete Task</h1>
+    <div>
+        <form method="post" action="">
+            {% csrf_token %}
+            <p>Are you sure?</p>
+            <input id="add-button" type="submit" value="Delete">
+        </form>
+    </div>
 </div>
 {% endblock %}

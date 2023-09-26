@@ -2,10 +2,13 @@
 
 {% block content %}
 
-<h1>Main</h1>
+<div class="header-bar">
+    <br>
+</div>
 
-<div>
-    <p>Hello! It's "To-Do List" program created with Django.<p>
+<div class="card-body">
+    <h1>"To-Do List"</h1>
+    <p>Hello! It's "To-Do List" app created with Django.<p>
 
     <p>The "To-Do List" program is a versatile task management tool that allows users to efficiently organize their tasks and responsibilities.
     Whether you're a student, a professional, or a homemaker, this application streamlines your life by simplifying task management.
@@ -19,11 +22,11 @@
 
     <p>Editing and Deletion: Users can modify task details or remove completed or unnecessary tasks.<p>
 
-    <p>The "To-Do List" program is a robust planning and organizational tool that empowers users to stay in control of their tasks and deadlines.
+    <p>The "To-Do List" app is a robust planning and organizational tool that empowers users to stay in control of their tasks and deadlines.
     Say goodbye to missed appointments or forgotten assignments—this program keeps you on top of your responsibilities.<p>
 
-    <p>If you are ready to get started <a href="{% url 'signup' %}">Sign Up</a><p>
+    <p>If you are ready to get started <a style="color: #004DE6" href="{% url 'signup' %}">Sign Up</a><p>
 
-    <p>Or if you already have an account <a href="{% url 'login' %}">Login</a><p>
+    <p>Or if you already have an account <a style="color: #004DE6" href="{% url 'login' %}">Login</a><p>
 </div>
 {% endblock %}
