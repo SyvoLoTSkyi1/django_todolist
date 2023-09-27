@@ -12,4 +12,5 @@ class TaskForm(forms.ModelForm):
         super(TaskForm, self).__init__(*args, **kwargs)
 
         if user:
-            self.fields['category'].queryset = Category.objects.filter(user=user)
+            self.fields['category']\
+                .queryset = Category.objects.filter(user=user)

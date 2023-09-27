@@ -37,7 +37,7 @@
                     {% if task.complete %}
                         <div class="task-title">
                             <div class="task-complete-icon"></div>
-                            <a style="color: #E8E8E8" href="{% url 'task-update' task.id %}">{{ task.title }}</a>
+                            <a href="{% url 'task-update' task.id %}">{{ task.title }}</a>
                         </div>
                     {% else %}
                         <div class="task-title">
