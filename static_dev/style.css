@@ -4,13 +4,13 @@ body {
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-    {
+h6 {
     font-family: 'Raleway', sans-serif;
 }
 
@@ -19,7 +19,8 @@ p
     {
     color: #000000
 }
-.container{
+
+.container {
     max-width: 550px;
     margin: auto;
     background-color: #fff;
@@ -35,10 +36,7 @@ p
     border-radius: 5px 5px 0 0;
     background: linear-gradient(90deg, #1966FF 0%, #004DE6 43%, #0000CC 100%);
 }
-/*3377FF*/
-/*1966FF*/
-/*2D23CE*/
-/*3399FF*/
+
 .header-bar a {
     color: rgb(247, 247, 247);
     text-decoration: none;
@@ -111,7 +109,6 @@ p
     padding: 10px;
 }
 
-
 #add-button {
     background-color: #1966FF;
     font-family: 'Nunito', sans-serif;
@@ -129,14 +126,11 @@ p
 }
 
 #add-button:hover {
-    background-color: #fff; /* Green */
+    background-color: #fff;
     color: #1966FF;
     border: 1px solid #1966FF;
 
 }
-    /*box-shadow: 2px 2px 8px rgba(0,65,194,0.67)*/
-    /*box-shadow: 2px 2px 7px rgba(235,121,111,0.78);*/
-
 
 input[type=text],
 input[type=password],
@@ -147,17 +141,11 @@ textarea {
     width: 90%;
 }
 
-
 label{
     padding-top: 10px !important;
     display: block;
 }
 
-.button {
-
-}
-
 .card-body {
     padding: 20px;
-
 }

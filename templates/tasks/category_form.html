@@ -1,26 +1,22 @@
 {% extends 'base.html' %}
 
+{% block title %}Category{% endblock %}
+
 {% block content %}
-<div class="header-bar">
+    <div class="header-bar">
+        <a href="javascript:history.back()">&#8592; Back</a>
+    </div>
 
-    <a href="javascript:history.back()">&#8592; Back</a>
-</div>
-
-
-
-
-<div class="card-body">
-    <h1>Category</h1>
-    <form method="post" action="">
-        {% csrf_token %}
-        {{ form.as_p }}
-
-        <input id="add-button" type="submit" value="Submit">
-        {% if category  %}
-        <a class="delete-link" style="margin-left: 350px" href="{% url 'category-delete' category.id %}">
-        <button id="add-button" type="button">Delete</button></a>
-
-        {% endif %}
-    </form>
-</div>
+    <div class="card-body">
+        <h1>Category</h1>
+        <form method="post" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input id="add-button" type="submit" value="Submit">
+            {% if category  %}
+                <a class="delete-link" style="margin-left: 350px" href="{% url 'category-delete' category.id %}">
+                <button id="add-button" type="button">Delete</button></a>
+            {% endif %}
+        </form>
+    </div>
 {% endblock %}
